@@ -1,79 +1,70 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nöbetçi Eczaneler Bilgi Ekranı</title>
+    <title>Test sayfası</title>
     <style>
-        body {
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: 'Inter', sans-serif;
+        }
+        html,
+        body {
+            display: flex;
+            text-align: start;
+            position: relative;
+            height: 100%;
+            width: 100%;
             background: linear-gradient(0deg, rgba(10, 0, 0, 0.55) 0%, rgba(10, 0, 0, 0.55) 100%), radial-gradient(71.48% 71.48% at 50.00% -0.00%, #4178d0 0%, #1f2d76 53.13%, #260000 100%);
             color: hsl(0, 0%, 100%);
-            text-align: center;
-            padding: 50px;
-            margin: 0;
+            overflow: auto;
         }
-
-        .container {
-            background-color: transparent;
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
             padding: 1rem;
-            font-size: 1rem;
-            max-width: 800px;
-            margin: 0 auto;
+            text-align: center;
+            font-size: .8rem;
+            color: hsla(0, 0%, 100%, .5);
+        }
+        @media (max-width: 512px) {
+            footer {
+                bottom: unset;
+                top: 0;
+            }
+            body {
+                height: auto;
+            }
+            #container {
+                margin-top: 6rem !important;
+                padding-bottom: 4rem;
+            }
+        }
+        #container {
+            width: clamp(300px, 75%, 800px);
+            position: relative;
+            justify-content: center;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            margin: 0 auto;
+            height: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            gap: .5rem;
         }
-
-        h1 {
-            font-size: 5rem;
-            font-weight: 100;
-            margin-bottom: 2rem;
-        }
-
         p {
-            font-size: 1.2rem;
-            color: hsl(0, 0%, 100%);
-        }
-
-        a.button {
-            color: white;
-            background-color: hsl(207, 90%, 54%);
-            border: none;
-            padding: 1rem;
-            border-radius: 0.25rem;
-            text-decoration: none;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-weight: 500;
-            text-align: center;
-            margin-top: 1rem;
-            transition: background-color 0.3s ease;
-        }
-
-        a.button:hover {
-            background-color: hsla(207, 90%, 54%, 0.9);
-        }
-
-        .arrow::before {
-            content: '← ';
-            margin-right: 0.2rem;
+            font-size: .9rem;
+            color: hsl(0, 0%, 80%);
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <h1>Nöbetçi Eczaneler Bilgi Ekranı'na Hoşgeldiniz!</h1>
-    <ul>
-        <li>Merhaba, Lütfen görmek istediğiniz ildeki nöbetçi eczaneleri görmek için adres çubuğuna il plakasını yazınız. örneğin: <a class="button" href="/eczane/58">Sivas İçin Tıklayınız</a></li>
-        <li>KKTC (Kuzey Kıbrıs Türk Cumhuriyeti)'ne ulaşmak için de adres çubuğuna <a class="button" href="/eczane/KKTC">KKTC İçin Tıklayınız</a> yazmanız yeterlidir.</li>
-        <li>Siteyi sadece göze hoş görünsün amacıyla yaptım. İsteyen de eczaneler.gen.tr adresine bakabilirler.</li>
-        <li>Her Türlü soru, görüş, öneri, Telif hakkı durumları için <a href="mailto:xrqu@sdevs.org" class="button">xrqu@sdevs.org</a> adresine yada Discord: <a href="https://discord.com/users/718374283642011728" class="button">@heyturkiye</a> adresine yazabilirsiniz.</li>
-        <li>Bu Siteye yönlendiren kısayol listesi için <a href="https://n-e-info.github.io" class="button">n-e-info.github.io</a> adresini kullanabilirsiniz. İyi kullanımlar :)</li>
-    </ul>
-</div>
+    Metin
 </body>
 </html>
