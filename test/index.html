@@ -6,7 +6,7 @@
     <title>Nöbetçi Eczaneler Bilgi Ekranı</title>
     <!-- Google Fonts'tan Montserrat fontunu içe aktar -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat">
-    <!-- Font Awesome CSS dosyasını ekleyin -->
+    <!-- Güncel Font Awesome CSS dosyasını ekleyin -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
     <style>
         /* Genel stil */
@@ -33,17 +33,18 @@
             display: flex;
             justify-content: space-between; /* İçerikleri yatay olarak ayır */
             align-items: center; /* İçerikleri dikey olarak ortala */
+            transition: all 0.3s; /* Header'ın yavaşça açılması ve kapanması için geçiş efekti */
         }
 
         .logo {
             max-width: 100px;
+            margin-left: 20px; /* Logo ile metni arasındaki boşluğu ayarlar */
         }
 
         .header-text {
             font-weight: bold;
             font-size: 24px;
             text-align: left; /* Metni sola hizala */
-            margin-left: 20px; /* Metni sola kaydır */
         }
 
         .header-links {
@@ -63,8 +64,9 @@
         /* Sosyal medya ikonları stil */
         .social-media {
             display: flex;
-            justify-content: flex-end; /* İkonları sağa hizala */
+            justify-content: flex-start; /* İkonları sola hizala */
             gap: 10px;
+            margin-left: 20px; /* Sosyal medya ikonları ile metni arasındaki boşluğu ayarlar */
         }
 
         .social-media a {
@@ -98,29 +100,30 @@
         </div>
     </header>
     <div class="content">
+        <!-- Sayfanın geri kalanı buraya gelebilir -->
         <h1>Hoş Geldiniz!</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsumdolor sit amet, consectetur adipiscing
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsumdolor sit amet, consectetur adipiscingLorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsumdolor sit amet, consectetur adipiscingLorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsumdolor sit amet, consectetur adipiscingLorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsumdolor sit amet, consectetur adipiscingelit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
     </div>
+    <script>
+        // Sayfa aşağı kaydırıldığında ve yukarı kaydırıldığında header'ı yavaşça açın ve kapatın
+        let prevScrollPos = window.pageYOffset;
+        let isOpen = true;
+
+        window.onscroll = function() {
+            let currentScrollPos = window.pageYOffset;
+
+            if (prevScrollPos > currentScrollPos && !isOpen) {
+                // Sayfa yukarı kaydırılıyor ve header kapalı, yavaşça aç
+                document.querySelector("header").style.top = "0";
+                isOpen = true;
+            } else if (prevScrollPos < currentScrollPos && isOpen) {
+                // Sayfa aşağı kaydırılıyor ve header açık, yavaşça kapat
+                document.querySelector("header").style.top = "-100px";
+                isOpen = false;
+            }
+
+            prevScrollPos = currentScrollPos;
+        }
+    </script>
 </body>
 </html>
