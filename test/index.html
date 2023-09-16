@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nöbetçi Eczaneler Bilgi Ekranı</title>
-    <!-- Google Fonts'tan Montserrat fontunu içe aktar -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat">
-    <!-- Güncel Font Awesome CSS dosyasını ekleyin -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+    <!-- Font Awesome için CSS dosyasını ekleyin -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Genel stil */
         body {
@@ -19,36 +18,50 @@
 
         /* Header stil */
         header {
-            background-color: white; /* Arka plan rengi beyaz */
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Hafif gölge */
-            color: #333; /* Metin rengi */
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            color: #333;
             padding: 20px 0;
             text-align: center;
             position: fixed;
-            top: 0;
+            top: -100px; /* Başlangıçta yukarıda başlasın */
             left: 0;
             right: 0;
             width: 100%;
             z-index: 1000;
             display: flex;
-            justify-content: space-between; /* İçerikleri yatay olarak ayır */
-            align-items: center; /* İçerikleri dikey olarak ortala */
-            transition: all 0.3s; /* Header'ın yavaşça açılması ve kapanması için geçiş efekti */
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
         }
 
         .logo {
             max-width: 100px;
-            margin-left: 20px; /* Logo ile metni arasındaki boşluğu ayarlar */
+            margin-left: 20px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-icon {
+            font-size: 36px;
+            margin-right: 10px;
         }
 
         .header-text {
             font-weight: bold;
             font-size: 24px;
-            text-align: left; /* Metni sola hizala */
+            text-align: left;
+        }
+
+        .header-center {
+            flex-grow: 1;
+            text-align: center;
         }
 
         .header-links {
-            flex-grow: 1; /* Bağlantıları alanı doldurması için */
             display: flex;
             justify-content: center;
             gap: 20px;
@@ -58,40 +71,54 @@
             text-decoration: none;
             color: #333;
             font-size: 18px;
-            font-weight: bold; /* Bağlantı metinlerini kalın yap */
+            font-weight: bold;
+        }
+
+        /* Siyah kod ikonları için stil */
+        .code-icon {
+            font-size: 24px;
+            color: black;
+            margin-right: 5px;
         }
 
         /* Sosyal medya ikonları stil */
         .social-media {
             display: flex;
-            justify-content: flex-start; /* İkonları sola hizala */
+            justify-content: flex-end;
             gap: 10px;
-            margin-left: 20px; /* Sosyal medya ikonları ile metni arasındaki boşluğu ayarlar */
+            margin-right: 20px;
         }
 
         .social-media a {
             text-decoration: none;
-            color: #333;
+            color: black;
             font-size: 24px;
         }
 
         /* Sayfa içeriğinin üstüne boşluk bırakmak için */
         .content {
-            margin-top: 100px;
+            margin-top: 120px; /* Header'ın boyutunu dikkate alarak artırın */
             padding: 20px;
+        }
+
+        /* Header'ın sayfa aşağı kaydırıldığında görünmesini sağlayan stil */
+        .show-header {
+            top: 0;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="left-section">
-            <img src="https://osmanysk.github.io/eczane/favicon.ico" alt="Logo" class="logo">
+    <header id="mainHeader">
+        <div class="header-left">
+            <div class="header-icon"><i class="fas fa-info-circle"></i></div>
             <div class="header-text">Nöbetçi Eczaneler Bilgi Ekranı</div>
         </div>
-        <div class="header-links">
-            <a href="#"><i class="fas fa-info-circle"></i> Hakkımızda</a>
-            <a href="#"><i class="fas fa-users"></i> Ekip</a>
-            <a href="#"><i class="fas fa-gavel"></i> Prensiplerimiz</a>
+        <div class="header-center">
+            <div class="header-links">
+                <a href="#"><i class="fas fa-code code-icon"></i> Hakkımızda</a>
+                <a href="#"><i class="fas fa-code code-icon"></i> Ekip</a>
+                <a href="#"><i class="fas fa-code code-icon"></i> Prensiplerimiz</a>
+            </div>
         </div>
         <div class="social-media">
             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -102,28 +129,50 @@
     <div class="content">
         <!-- Sayfanın geri kalanı buraya gelebilir -->
         <h1>Hoş Geldiniz!</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
     </div>
+
     <script>
-        // Sayfa aşağı kaydırıldığında ve yukarı kaydırıldığında header'ı yavaşça açın ve kapatın
-        let prevScrollPos = window.pageYOffset;
-        let isOpen = true;
+        // Header'ın sayfa aşağı kaydırıldığında görünmesini sağlayan JavaScript kodu
+        const header = document.getElementById("mainHeader");
+        let scrolled = false;
 
-        window.onscroll = function() {
-            let currentScrollPos = window.pageYOffset;
-
-            if (prevScrollPos > currentScrollPos && !isOpen) {
-                // Sayfa yukarı kaydırılıyor ve header kapalı, yavaşça aç
-                document.querySelector("header").style.top = "0";
-                isOpen = true;
-            } else if (prevScrollPos < currentScrollPos && isOpen) {
-                // Sayfa aşağı kaydırılıyor ve header açık, yavaşça kapat
-                document.querySelector("header").style.top = "-100px";
-                isOpen = false;
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 100) {
+                if (!scrolled) {
+                    header.classList.add("show-header");
+                    scrolled = true;
+                }
+            } else {
+                if (scrolled) {
+                    header.classList.remove("show-header");
+                    scrolled = false;
+                }
             }
-
-            prevScrollPos = currentScrollPos;
-        }
+        });
     </script>
 </body>
 </html>
