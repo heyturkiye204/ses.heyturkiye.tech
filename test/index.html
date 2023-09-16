@@ -3,71 +3,71 @@
 <head>
     <style>
         body {
-    background-color: #fff; /* Beyaz arka plan */
-    color: #000; /* Siyah metin rengi */
-}
+            background-color: #fff; /* Beyaz arka plan */
+            color: #000; /* Siyah metin rengi */
+        }
 
-.footer {
-    background-color: #fff;
-    padding: 20px;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
+        footer {
+            background-color: #fff;
+            padding: 20px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
 
-.left-section {
-    flex: 1;
-}
+        .left-section {
+            flex: 1;
+        }
 
-.logo {
-    max-width: 100px; /* Logonun maksimum genişliği */
-}
+        .logo {
+            max-width: 100px; /* Logonun maksimum genişliği */
+        }
 
-.social-media {
-    margin-top: 20px;
-}
+        .social-media {
+            margin-top: 20px;
+        }
 
-.social-media a {
-    margin-right: 10px;
-    text-decoration: none;
-    color: #000;
-}
+        .social-media a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #000;
+        }
 
-.menu {
-    flex: 2;
-    display: flex;
-    justify-content: space-between;
-}
+        .menu {
+            flex: 2;
+            display: flex;
+            justify-content: space-between;
+        }
 
-.menu ul {
-    list-style: none;
-    padding: 0;
-}
+        .menu ul {
+            list-style: none;
+            padding: 0;
+        }
 
-.menu li {
-    font-weight: bold;
-}
+        .menu li {
+            font-weight: bold;
+        }
 
-.menu li:first-child {
-    margin-bottom: 10px;
-}
+        .menu li:first-child {
+            margin-bottom: 10px;
+        }
 
-.menu a {
-    text-decoration: none;
-    color: #000;
-}
+        .menu a {
+            text-decoration: none;
+            color: #000;
+        }
 
-.copyright {
-    flex-basis: 100%;
-    margin-top: 20px;
-    text-align: center;
-}
+        .copyright {
+            flex-basis: 100%;
+            margin-top: 20px;
+            text-align: left; /* Telif hakkı mesajını sola taşıdık */
+            font-size: 14px; /* Telif hakkı mesajının font boyutunu ayarlayabilirsiniz */
+        }
     </style>
 </head>
 <body>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <footer class="footer">
         <div class="left-section">
             <img src="logo.png" alt="Logo" class="logo">
@@ -87,23 +87,11 @@
                 <li><a href="#">Bağlantı 4</a></li>
                 <li><a href="#">Bağlantı 5</a></li>
             </ul>
-            <ul>
-                <li>MENU 2</li>
-                <li><a href="#">Bağlantı 1</a></li>
-                <li><a href="#">Bağlantı 2</a></li>
-                <li><a href="#">Bağlantı 3</a></li>
-                <li><a href="#">Bağlantı 4</a></li>
-                <li><a href="#">Bağlantı 5</a></li>
-            </ul>
-            <ul>
-                <li>MENU 3</li>
-                <li><a href="#">Bağlantı 1</a></li>
-                <li><a href="#">Bağlantı 2</a></li>
-                <li><a href="#">Bağlantı 3</a></li>
-                <li><a href="#">Bağlantı 4</a></li>
-                <li><a href="#">Bağlantı 5</a></li>
-            </ul>
+            <!-- Diğer menüler burada -->
         </div>
     </footer>
+    <div class="copyright">
+        &copy; 2023 Şirket Adı. Tüm hakları saklıdır.
+    </div>
 </body>
 </html>
