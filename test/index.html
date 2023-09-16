@@ -24,7 +24,7 @@
             padding: 20px 0;
             text-align: center;
             position: fixed;
-            top: -100px; /* Başlangıçta yukarıda başlasın */
+            top: 0; /* Başlangıçta normal yerinde başlasın */
             left: 0;
             right: 0;
             width: 100%;
@@ -101,14 +101,19 @@
             padding: 20px;
         }
 
-        /* Header'ın sayfa aşağı kaydırıldığında görünmesini sağlayan stil */
+        /* Header'ın sayfa yukarı kaydırıldığında görünmesini ve kaybolmasını sağlayan stil */
         .show-header {
             top: 0;
+        }
+
+        /* Sayfa başladığında header'ı kaydırmak için stil */
+        .hide-header {
+            top: -80px; /* Header'ı yukarı kaydırın */
         }
     </style>
 </head>
 <body>
-    <header id="mainHeader">
+    <header id="mainHeader" class="hide-header">
         <div class="header-left">
             <div class="header-icon"><i class="fas fa-info-circle"></i></div>
             <div class="header-text">Nöbetçi Eczaneler Bilgi Ekranı</div>
@@ -129,34 +134,19 @@
     <div class="content">
         <!-- Sayfanın geri kalanı buraya gelebilir -->
         <h1>Hoş Geldiniz!</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit... 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsumLorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsumLorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsumLorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsumLorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsumLorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsumLorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsumdolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
     </div>
 
     <script>
-        // Header'ın sayfa aşağı kaydırıldığında görünmesini sağlayan JavaScript kodu
+        // Header'ın sayfa yukarı kaydırıldığında görünmesini ve kaybolmasını sağlayan JavaScript kodu
         const header = document.getElementById("mainHeader");
         let scrolled = false;
 
@@ -164,11 +154,13 @@
             if (window.scrollY > 100) {
                 if (!scrolled) {
                     header.classList.add("show-header");
+                    header.classList.remove("hide-header");
                     scrolled = true;
                 }
             } else {
                 if (scrolled) {
                     header.classList.remove("show-header");
+                    header.classList.add("hide-header");
                     scrolled = false;
                 }
             }
