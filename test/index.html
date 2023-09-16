@@ -1,170 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nöbetçi Eczaneler Bilgi Ekranı</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat">
-    <!-- Font Awesome için CSS dosyasını ekleyin -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Genel stil */
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nöbetçi Eczaneler Bilgi Ekranı</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat">
+    <!-- Font Awesome için CSS dosyasını ekleyin -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Genel stil */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
 
-        /* Header stil */
-        header {
-            background-color: white;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            color: #333;
-            padding: 20px 0;
-            text-align: center;
-            position: fixed;
-            top: 0; /* Başlangıçta normal yerinde başlasın */
-            left: 0;
-            right: 0;
-            width: 100%;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s;
-        }
+        /* Header stil */
+        header {
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            color: #333;
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            top: 0; /* Başlangıçta normal yerinde başlasın */
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
 
-        .logo {
-            max-width: 100px;
-            margin-left: 20px;
-        }
+        .logo {
+            max-width: 100px;
+            margin-left: 20px;
+        }
 
-        .header-left {
-            display: flex;
-            align-items: center;
-        }
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
 
-        .header-icon {
-            font-size: 36px;
-            margin-right: 10px;
-        }
+        .header-icon {
+            font-size: 36px;
+            color: black;
+            margin-right: 10px;
+        }
 
-        .header-text {
-            font-weight: bold;
-            font-size: 24px;
-            text-align: left;
-        }
+        .header-text {
+            font-weight: bold;
+            font-size: 24px;
+            text-align: left;
+        }
 
-        .header-center {
-            flex-grow: 1;
-            text-align: center;
-        }
+        .header-center {
+            flex-grow: 1;
+            text-align: center;
+        }
 
-        .header-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
+        .header-links {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
 
-        .header-links a {
-            text-decoration: none;
-            color: #333;
-            font-size: 18px;
-            font-weight: bold;
-        }
+        .header-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+        }
 
-        /* Siyah kod ikonları için stil */
-        .code-icon {
-            font-size: 24px;
-            color: black;
-            margin-right: 5px;
-        }
+        /* Siyah kod iconları için stil */
+        .code-icon {
+            font-size: 24px;
+            color: black;
+            margin-right: 5px;
+        }
 
-        /* Sosyal medya ikonları stil */
-        .social-media {
-            display: flex;
-            justify-content: flex-end;
-            gap: 10px;
-            margin-right: 20px;
-        }
+        /* Sosyal medya iconları stil */
+        .social-media {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-right: 20px;
+        }
 
-        .social-media a {
-            text-decoration: none;
-            color: black;
-            font-size: 24px;
-        }
+        .social-media a {
+            text-decoration: none;
+            color: black;
+            font-size: 24px;
+        }
 
-        /* Sayfa içeriğinin üstüne boşluk bırakmak için */
-        .content {
-            margin-top: 120px; /* Header'ın boyutunu dikkate alarak artırın */
-            padding: 20px;
-        }
+        /* Sayfa içeriğinin üstüne boşluk bırakmak için */
+        .content {
+            margin-top: 120px; /* Header'ın boyutunu dikkate alarak artırın */
+            padding: 20px;
+        }
 
-        /* Header'ın sayfa yukarı kaydırıldığında görünmesini ve kaybolmasını sağlayan stil */
-        .show-header {
-            top: 0;
-        }
+        /* Header'ın sayfa yukarı kaydırıldığında görünmesini ve kaybolmasını sağlayan stil */
+        .show-header {
+            top: 0;
+        }
 
-        /* Sayfa başladığında header'ı kaydırmak için stil */
-        .hide-header {
-            top: -80px; /* Header'ı yukarı kaydırın */
-        }
-    </style>
+        /* Sayfa başladığında header'ı kaydırmak için stil */
+        .hide-header {
+            top: -80px; /* Header'ı yukarı kaydırın */
+        }
+    </style>
 </head>
 <body>
-    <header id="mainHeader" class="hide-header">
-        <div class="header-left">
-            <div class="header-icon"><i class="fas fa-info-circle"></i></div>
-            <div class="header-text">Nöbetçi Eczaneler Bilgi Ekranı</div>
-        </div>
-        <div class="header-center">
-            <div class="header-links">
-                <a href="#"><i class="fas fa-code code-icon"></i> Hakkımızda</a>
-                <a href="#"><i class="fas fa-code code-icon"></i> Ekip</a>
-                <a href="#"><i class="fas fa-code code-icon"></i> Prensiplerimiz</a>
-            </div>
-        </div>
-        <div class="social-media">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="https://youtube.com/@osmanyskeczane"><i class="fab fa-youtube"></i></a>
-        </div>
-    </header>
-    <div class="content">
-        <!-- Sayfanın geri kalanı buraya gelebilir -->
-        <h1>Hoş Geldiniz!</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsumLorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsumLorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsumLorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsumLorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsumLorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsumLorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsumdolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-    </div>
+    <header id="mainHeader" class="show-header">
+        <div class="header-left">
+            <img src="https://osmanysk.github.io/eczane/favicon.ico" alt="Favicon" class="logo">
+            <div class="header-icon"><i class="fas fa-info-circle"></i></div>
+            <div class="header-text">Nöbetçi Eczaneler Bilgi Ekranı</div>
+        </div>
+        <div class="header-center">
+            <div class="header-links">
+                <a href="#"><i class="fas fa-code code-icon"></i> Hakkımızda</a>
+                <a href="#"><i class="fas fa-code code-icon"></i> Ekip</a>
+                <a href="#"><i class="fas fa-code code-icon"></i> Prensiplerimiz</a>
+            </div>
+        </div>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com/@osmanyskeczane"><i class="fab fa-youtube"></i></a>
+        </div>
+    </header>
+    <div class="content">
+        <!-- Sayfanın geri kalanı buraya gelebilir -->
+        <h1>Hoş Geldiniz!</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit... BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.BU METİN TEST AMAÇLI YAZILMIŞTIR.</p>
+    </div>
 
-    <script>
-        // Header'ın sayfa yukarı kaydırıldığında görünmesini ve kaybolmasını sağlayan JavaScript kodu
-        const header = document.getElementById("mainHeader");
-        let scrolled = false;
+    <script>
+        // Header'ın sayfa yukarı kaydırıldığında görünmesini ve kaybolmasını sağlayan JavaScript kodu
+        const header = document.getElementById("mainHeader");
+        let scrolled = false;
 
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 100) {
-                if (!scrolled) {
-                    header.classList.add("show-header");
-                    header.classList.remove("hide-header");
-                    scrolled = true;
-                }
-            } else {
-                if (scrolled) {
-                    header.classList.remove("show-header");
-                    header.classList.add("hide-header");
-                    scrolled = false;
-                }
-            }
-        });
-    </script>
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 100) {
+                if (!scrolled) {
+                    header.classList.add("show-header");
+                    header.classList.remove("hide-header");
+                    scrolled = true;
+                }
+            } else {
+                if (scrolled) {
+                    header.classList.remove("show-header");
+                    header.classList.add("hide-header");
+                    scrolled = false;
+                }
+            }
+        });
+    </script>
 </body>
 </html>
+
