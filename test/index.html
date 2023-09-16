@@ -1,118 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-    body {
-        background-color: #fff; /* Beyaz arka plan */
-        color: #000; /* Siyah metin rengi */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <style>
+        /* Buraya CSS kodlarını ekleyin */
+        .footer {
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
 
-    footer {
-        background-color: #fff;
-        padding: 20px;
-        text-align: left;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        border-top: 1px solid #ddd; /* Üst çizgi */
-        border-bottom: 1px solid #ddd; /* Alt çizgi */
-    }
+        .left-section {
+            flex: 1;
+        }
 
-    .left-section {
-        flex: 1;
-    }
+        .logo {
+            max-width: 100px;
+        }
 
-    .logo {
-        max-width: 100px; /* Logonun maksimum genişliği */
-    }
+        .social-media {
+            margin-top: 10px;
+            position: relative;
+        }
 
-    .social-media {
-        margin-top: 20px;
-    }
+        /* Kenarsız ve kare içerisinde sosyal medya iconları */
+        .social-media a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #000;
+            font-size: 16px;
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            text-align: center;
+            line-height: 32px;
+            border: 1px solid #888;
+            border-radius: 4px;
+        }
 
-    .social-media a {
-        margin-right: 10px;
-        text-decoration: none;
-        color: #000;
-    }
+        .social-media::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #888;
+            z-index: -1;
+        }
 
-    .menu {
-        flex: 2;
-        display: flex;
-        justify-content: space-between;
-    }
+        /* "Bizi buradan takip edin" metni sola hizalama */
+        .follow-us {
+            font-size: 12px;
+            margin-top: 5px;
+            text-align: left; /* Metni sola hizaladık */
+            color: #888;
+        }
 
-    .menu ul {
-        list-style: none;
-        padding: 0;
-    }
+        .menu {
+            flex: 2;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
 
-    .menu li {
-        font-weight: bold;
-        font-family: "Arial", sans-serif; /* Yeni font özelliği */
-        font-size: 16px; /* Yeni font boyutu */
-    }
+        .menu ul {
+            list-style: none;
+            padding: 0;
+        }
 
-    .menu li:first-child {
-        margin-bottom: 10px;
-    }
+        .menu li {
+            font-weight: bold;
+            font-family: "Arial", sans-serif;
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
 
-    .menu a {
-        text-decoration: none;
-        color: #000;
-    }
+        .menu a {
+            text-decoration: none;
+            color: #000;
+        }
 
-    .copyright {
-        flex-basis: 100%;
-        margin-top: 20px;
-        text-align: left; /* Telif hakkı mesajını sola taşıdık */
-        font-size: 14px; /* Telif hakkı mesajının font boyutunu ayarlayabilirsiniz */
-    }
-</style>
-
+        .copyright {
+            margin-top: 20px;
+            text-align: left;
+            font-size: 14px;
+        }
+        /* CSS kodlarını buraya kadar ekleyin */
+    </style>
 </head>
 <body>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <footer class="footer">
+    <footer class="footer">
         <div class="left-section">
-            <img src="logo.png" alt="Logo" class="logo">
-            <p>Açıklama metni burada.</p>
+            <img src="https://osmanysk.github.io/eczane/favicon.ico" alt="Logo" class="logo">
+            <p><b>Nöbetçi Eczaneler Bilgi Ekranı</b><br>Gelişmiş teknolojiyi nöbetçi eczanelerle buluşturuyoruz. Aramıza hoşgeldin!</p>
             <div class="social-media">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://youtube.com/@osmanyskeczane"><i class="fab fa-youtube"></i></a>
+                <div class="follow-us">
+                    Bizi buradan takip edin
+                </div>
             </div>
         </div>
         <div class="menu">
             <ul>
-                <li>Menü 1</li>
-                <li><a href="#">Bağlantı 1</a></li>
-                <li><a href="#">Bağlantı 2</a></li>
-                <li><a href="#">Bağlantı 3</a></li>
-                <li><a href="#">Bağlantı 4</a></li>
-                <li><a href="#">Bağlantı 5</a></li>
+                <li><b>Hakkımızda</b></li>
+                <li><a href="https://osmanysk.github.io/eczane/#hakkimizda">Hakkımızda</a></li>
+                <li><a href="https://osmanysk.github.io/eczane/#prensip">Prensiplerimiz</a></li>
+                <li><a href="https://n-e-info.github.io/">Kısayol Bağlantılarımız</a></li>
             </ul>
             <ul>
-                <li>Menü 2</li>
-                <li><a href="#">Bağlantı 1</a></li>
-                <li><a href="#">Bağlantı 2</a></li>
-                <li><a href="#">Bağlantı 3</a></li>
-                <li><a href="#">Bağlantı 4</a></li>
-                <li><a href="#">Bağlantı 5</a></li>
+                <li><b>Katkıda Bulunanlar</b></li>
+                <li><a href="https://eczaneler.gen.tr/">eczaneler.gen.tr</a></li>
+                <li><a href="https://osmanysk.github.io/eczane/#ekip">Ekibimiz</a></li>
+                <li><a href="https://osmanysk.github.io/eczane/#tesekkurler">Teşekkürler</a></li>
             </ul>
             <ul>
-                <li>Menü 3</li>
-                <li><a href="#">Bağlantı 1</a></li>
-                <li><a href="#">Bağlantı 2</a></li>
-                <li><a href="#">Bağlantı 3</a></li>
-                <li><a href="#">Bağlantı 4</a></li>
-                <li><a href="#">Bağlantı 5</a></li>
+                <li><b>Sosyal Medya</b></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">İnstagram</a></li>
+                <li><a href="https://youtube.com/@osmanyskeczane">YouTube</a></li>
             </ul>
         </div>
     </footer>
     <div class="copyright">
-        &copy; 2023 Şirket Adı. Tüm hakları saklıdır.
+        Nöbetçi Eczaneler Bilgi Ekranı &copy; 2023, site kâr amacı gütmeden eczaneler.gen.tr tarafından sağlanmıştır ❤
     </div>
 </body>
 </html>
